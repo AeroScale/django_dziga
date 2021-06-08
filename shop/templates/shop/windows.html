@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Окна{% endblock %}
+
+{% block content %}
+<ul class="features">
+        <h1>Окна</h1>
+        {% csrf_token %}
+        {% for window in Product_window %}
+        <div class="alert-warning-windows">
+            <img src="{{ MEDIA }}{{ window.image.url }}" align="left" width="150" height="150">
+            <blockquote>
+                <h4>{{ window.title }}</h4>
+                <cite>{{ window.windows_anons }}</cite>
+            </blockquote>
+            <a href="{% url 'windows-detail' window.id %}" class="btn btn-warning">Детальнее</a>
+        </div>
+        {% endfor %}
+    </ul>
+{% endblock %}

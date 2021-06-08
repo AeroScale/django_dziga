@@ -1,0 +1,52 @@
+{% load static %}
+{% csrf_token %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+    <div class="head">
+        <ul class="contacts">
+            <li><a href=""><i class="fas fa-phone"></i> +38(095)804-08-27</a></li>
+            <li><a href=""><i class="fas fa-phone"></i> +38(067)389-73-23</a></li>
+            <li><a href=""><i class="fas fa-envelope"></i> manager@dziga.online</a></li>
+            <li><a href=""><i class="fas fa-map-marker-alt"></i>  м. Біла Церква вул. Привокзальна, 93</a></li>
+            <li><a href="https://www.instagram.com/dziga.online/"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/Dzigaonline-106472467752464"><i class="fab fa-facebook-square"></i> </a></li>
+            <li><a href="https://t.me/dziga"><i class="fab fa-telegram-plane"></i> </a></li>
+        </ul>
+    </div>
+    <div class="footer"><p>&copy; Авторське право 2021 Дзиґа - вікна, вхідні та міжкімнатні двері<p></div>
+    <nav>
+        <ul class="topmenu">
+            <li><a href="/"><img src="{% static 'main/img/logo.png' %}" alt=""></a></li>
+            <li><a href="/">ГОЛОВНА СТОРІНКА</a></li>
+            <li><a href="range" class="active">АСОРТИМЕНТ  <i class="fas fa-angle-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="shop/windows">Металопластикові вироби</a></li>
+                    <li><a href="">Вхідні двері</a>
+                    <li><a href="">Міжкімнатні двері</a></li>
+                    <li><a href="">Ковані вироби</a></li>
+                    <li><a href="">Техніка для дому</a></li>
+                </ul>
+            </li>
+        <li><a href="{% url 'create' %}">БЕЗКОШТОВНИЙ ПРОРАХУНОК</a></li>
+        <li><a href="gallery">НАШІ РОБОТИ</a></li>
+        <li><a href="about">ПРО НАС</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

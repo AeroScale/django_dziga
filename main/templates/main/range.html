@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Асортимент{% endblock %}
+
+{% block content %}
+    <div class="range-menu">
+        <h1>Асортимент</h1>
+        {% csrf_token %}
+        <div class="range-button">
+            <a href="shop/windows"><img src="{% static 'main/img/okna.png' %}">Вікна</a>
+            <a href="#"><img src="{% static 'main/img/vhd.png' %}">Вхідні двері</a>
+            <a href="#"><img src="{% static 'main/img/mezhk.png' %}">Міжкімнатні двері</a>
+            <a href="#"><img src="{% static 'main/img/resh.png' %}">Ковані вироби</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Новини{% endblock %}
+
+{% block content %}
+    <ul class="features">
+        <h1>Новини</h1>
+        {% csrf_token %}
+        {% for article in news %}
+        <div class="alert-warning">
+            <img src="{{ MEDIA }}{{ article.img.url }}" align="left" width="310" height="165">
+            <blockquote>
+                <h4>{{ article.title }}</h4>
+                <p>{{ article.anons }}</p>
+            </blockquote>
+            <a href="{% url 'news-detail' article.id %}" class="btn btn-warning">Детальніше</a>
+        </div>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

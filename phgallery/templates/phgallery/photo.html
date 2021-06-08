@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Наші роботи{% endblock %}
+
+{% block content %}
+    <div class="gallery-menu">
+        <h1>Наші роботи</h1>
+        {% csrf_token %}
+        <div class="gallery-button">
+            {% for results in Imggal %}
+            <a href="#"><img src="{{ results.image.url }}"></a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

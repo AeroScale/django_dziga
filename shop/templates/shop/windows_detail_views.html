@@ -1,0 +1,12 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ window.title   }}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        {% csrf_token %}
+        <h1>{{ window.title }}</h1>
+        <p>{{ window.windows_full|safe }}</p>
+
+    </div>
+{% endblock %}

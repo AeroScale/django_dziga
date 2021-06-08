@@ -1,0 +1,11 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ results.imgtitle }}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        {% csrf_token %}
+        <img src="{{ results.image.url }}">
+
+    </div>
+{% endblock %}

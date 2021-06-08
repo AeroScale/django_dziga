@@ -1,0 +1,34 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Безкоштовний прорахунок{% endblock %}
+
+{% block content %}
+  <ul class="create">
+    <h1>Заявка на безкоштовний прорахунок</h1>
+    <form class ="feedback-form" method="POST">
+        {% csrf_token %}<br>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">ПІБ</label>
+            <input type="text" class="form-control" id="{{ form.name }}
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email адрес</label>
+            <input type="email" class="form-control" id="{{ form.email }}
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Телефон</label>
+            <input type="text" class="form-control" id="{{ form.phone }}
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Продукт</label>
+            <input type="text" class="form-control" id="{{ form.product }}
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Опис</label>
+            <textarea class="form-control" id="{{ form.description }}</textarea>
+        </div>
+        <span>{{ error }}</span>
+        <button type="submit" class="btn btn-warning">Відправити</button>
+      </form>
+  </ul>
+{% endblock %}
